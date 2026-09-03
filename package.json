@@ -2,7 +2,6 @@
   "name": "transform_cosmetics_app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kceem.github.io/transform_cosmetics_app/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
