@@ -1,9 +1,8 @@
 
 import "./VideoModal.css";
-import React, { useState } from "react";
+import React from "react";
 
 function VideoModal({ video, onClose }) {
-  const [showVideo, setShowVideo] = useState(false);
   if (!video) return null;
 
   return (

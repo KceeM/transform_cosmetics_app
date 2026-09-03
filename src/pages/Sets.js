@@ -3,9 +3,6 @@ import sets from "../data/sets";
 import "./Sets.css";
 import SetModal from "../components/SetModal";
 import { useState } from "react";
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
-import heart from "../images/Icons/Heart1.png";
 import SetCard from "../components/SetCard";
 
 
@@ -40,9 +37,6 @@ function Sets() {
   );
 
   const [selectedSet, setSelectedSet] = useState(null);
-
-  const { addToCart, addToWishlist } = useContext(CartContext);
-
 
   const renderSetSection = (title, data) => (
     <section className="set-section">

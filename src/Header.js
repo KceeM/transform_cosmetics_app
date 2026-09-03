@@ -4,7 +4,6 @@ import logo from "./images/logo1.png";
 import cartIcon from "./images/Icons/Cart1.png";
 import heartIcon from "./images/Icons/Heart1.png";
 import "./Header.css"; 
-import HeaderIcons from "./components/HeaderIcons";
 import SearchBar from "./components/SearchBar";
 
 
