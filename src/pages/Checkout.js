@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 function Checkout() {
   const { cartItems } = useContext(CartContext);
-  const shippingFee = 150;
+  const shippingFee = 160;
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -71,7 +71,7 @@ function Checkout() {
           <span>R{subtotal}</span>
         </div>
         <div className="summary-line">
-          <span>Shipping</span>
+          <span>Nationwide delivery (Courier Guy)</span>
           <span>R{shippingFee}</span>
         </div>
         <div className="summary-line total">
