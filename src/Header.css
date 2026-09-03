@@ -70,6 +70,9 @@
 }
 
 .icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   color: #111;
   text-decoration: none;
@@ -132,4 +135,3 @@
     font-size: 1.3rem;
   }
 }
-
