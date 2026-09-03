@@ -12,11 +12,24 @@ function Checkout() {
     email: "",
     phone: "",
     address: "",
+    suburb: "",
     city: "",
+    province: "",
     postalCode: "",
+    deliveryNotes: "",
   });
 
-  const isFormValid = Object.values(formData).every((val) => val.trim() !== "");
+  const requiredFields = [
+    "fullName",
+    "email",
+    "phone",
+    "address",
+    "suburb",
+    "city",
+    "province",
+    "postalCode",
+  ];
+  const isFormValid = requiredFields.every((field) => formData[field].trim() !== "");
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const total = subtotal + shippingFee;
@@ -41,15 +54,25 @@ function Checkout() {
       <div className="checkout-left">
         <h2>Checkout</h2>
         <form onSubmit={handleSubmit} className="checkout-form">
-          {["fullName", "email", "phone", "address", "city", "postalCode"].map((field) => (
-            <label key={field}>
-              {field.replace(/([A-Z])/g, " $1")}: 
+          {[
+            { name: "fullName", label: "Full name", type: "text" },
+            { name: "email", label: "Email address", type: "email" },
+            { name: "phone", label: "Phone number", type: "tel" },
+            { name: "address", label: "Street address", type: "text" },
+            { name: "suburb", label: "Suburb", type: "text" },
+            { name: "city", label: "City or town", type: "text" },
+            { name: "province", label: "Province", type: "text" },
+            { name: "postalCode", label: "Postal code", type: "text" },
+            { name: "deliveryNotes", label: "Delivery instructions (optional)", type: "text", required: false },
+          ].map((field) => (
+            <label key={field.name}>
+              {field.label}:
               <input
-                type="text"
-                name={field}
-                value={formData[field]}
+                type={field.type}
+                name={field.name}
+                value={formData[field.name]}
                 onChange={handleChange}
-                required
+                required={field.required !== false}
               />
             </label>
           ))}
